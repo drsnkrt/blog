@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>DKBlog</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div th:each="article:${articles}" class="about-two">
+        <ul>
+            <li>
+                <h6>Posted by Admin</h6>
+            </li>
+            <li><p th:text="${#dates.format(article.recordDate,'dd-MM-yyyy')}"></p></li>
+        </ul>
+
+        <a th:href="${'/'+article.articleId}"><h3 th:text="${article.title}"></h3></a>
+        <p th:text="${#strings.abbreviate(article.article,230)}"></p>
+        <div class="about-btn">
+            <a th:href="${'/'+article.articleId}">Makaleyi Oku</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

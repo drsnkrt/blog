@@ -1,0 +1,13 @@
+<aside th:fragment="latest" class="abt-2" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h3> SON MAKALELER </h3>
+    <div th:each="article:${articlesdesc}" class="might-grid">
+        <div class="grid-might">
+            <a href="single.html"><img src="images/c-12.jpg" class="img-responsive" alt=""> </a>
+        </div>
+        <div class="might-top">
+            <h4 th:text="${article.title}"></h4>
+            <p th:text="${#strings.abbreviate(article.article,100)}"></p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</aside>

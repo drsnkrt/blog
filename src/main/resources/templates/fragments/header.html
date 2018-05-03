@@ -1,0 +1,51 @@
+<div th:fragment="header" class="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="container">
+        <div class="head">
+            <div class="navigation">
+                <span class="menu"></span>
+                <ul class="navig">
+                    <li><a href="/" class="active"> Anasayfa </a></li>
+                    <li><a href="/about"> Hakkımda </a></li>
+                    <li><a href="/gallery"> Galeri </a></li>
+                    <li><a href="/contact"> Bana ulaş </a></li>
+                </ul>
+            </div>
+
+            <div class="header-right">
+                <form action="/search" class="form-inline">
+                    <div class="search-bar">
+                        <input type="text" name="title" value="Search" onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="">
+                    </div>
+                </form>
+                <ul>
+                    <li><a href="#"><span class="fb"> </span></a></li>
+                    <li><a href="#"><span class="twit"> </span></a></li>
+                    <li><a href="#"><span class="pin"> </span></a></li>
+                    <li><a href="#"><span class="rss"> </span></a></li>
+                    <li><a href="#"><span class="drbl"> </span></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $("span.menu").click(function () {
+        $(" ul.navig").slideToggle("slow", function () {
+        });
+    });
+</script>
+<div class="banner">
+    <div class="container">
+        <div class="banner-top">
+            <div class="banner-text">
+                <h1> Spring Boot ve Thymeleaf Blog </h1>
+                <div class="banner-btn">
+                    <a href="/contact"> Oku... </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

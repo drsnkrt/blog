@@ -1,0 +1,12 @@
+<div class="comment-bottom heading" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h3>Yorum yap</h3>
+    <form th:action="@{/addcomment}" th:object="${cmt}" method="post">
+        <input type="text" th:field="*{comment}" id="comment" onfocus="this.value='';"
+               onblur="if (this.value == '') {this.value ='comment';}">
+        <input type="text" th:field="*{imageUri}" id="imageUri" onfocus="this.value='';"
+               onblur="if (this.value == '') {this.value ='imageUri';}">
+        <input type="text" th:field="*{recordStatusId}" id="recordStatusId" onfocus="this.value='';"
+               onblur="if (this.value == '') {this.value ='recordStatusId';}">
+        <input type="submit" value="Yorum Yap">
+    </form>
+</div>

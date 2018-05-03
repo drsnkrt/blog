@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title> Detay </title>
+</head>
+<body layout:fragment="content">
+<div class="about-two">
+    <p>Posted by Admin</p>
+    <p th:text="${#dates.format(article.recordDate,'dd-MM-yyyy')}"></p>
+    <p style="color: red" th:text="${article.articleId}"></p>
+    <p th:text="${article.title}"></p>
+    <p th:text="${article.article}"></p>
+</div>
+<div class="comment-bottom heading">
+    <h3>Yorum yap</h3>
+    <form method="post" action="/addcomment" th:value="${article.articleId}">
+        <input type="hidden" id="articleId">
+        <input type="text" id="comment">
+        <input type="text" id="imageUri">
+        <input type="number" id="recordStatusId">
+        <input type="submit" value="Yorum Yap">
+    </form>
+</div>
+</body>
+</html>
+
+
